@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="ordercontainer container card bg-secondary mt-5" style="max-width: 70vw;">
+        <h2 style="margin-top: 4rem; text-shadow: 1px 1px 1px black;">Add Order</h2>
+        <form class="orderbox" method="POST" action="{{ url_for('addorder') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.first_name.label(class="productlabel") }}
+                {{ form.first_name(class="form-control productinput", id="first_name", placeholder="Enter first name") }}
+            </div>
+            <div class="form-group mt-4">
+                {{ form.last_name.label(class="productlabel") }}
+                {{ form.last_name(class="form-control productinput", id="last_name", placeholder="Enter last name") }}
+            </div>
+            <div class="form-group mt-4">
+                {{ form.address.label(class="productlabel") }}
+                {{ form.address(class="form-control productinput", id="address", placeholder="Enter address") }}
+            </div>
+            <div class="form-group mt-4">
+                {{ form.pesel.label(class="productlabel") }}
+                {{ form.pesel(class="form-control productinput", id="pesel", placeholder="Enter PESEL") }}
+            </div>
+            <div class="form-group mt-4">
+                {{ form.contact.label(class="productlabel") }}
+                {{ form.contact(class="form-control productinput", id="contact", placeholder="Enter email or phone") }}
+            </div>
+
+            <h3>Order Items</h3>
+            <div id="order-items">
+                {% for item in form.order_items %}
+                    <div class="form-group mt-4">
+                        {{ item.product_name.label(class="productlabel") }}
+                        {{ item.product_name(class="form-control productinput product-name", placeholder="Enter product name") }}
+                    </div>
+                    <div class="form-group mt-4">
+                        {{ item.quantity.label(class="productlabel") }}
+                        {{ item.quantity(class="form-control productinput product-quantity", placeholder="Enter quantity") }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {{ form.add_item(class="btn btn-info mt-4 mb-4", style="padding: 1rem; width: 10rem; font-size: 1rem;") }}
+            {{ form.submit(class="btn btn-success mt-4 mb-4", style="padding: 1rem; width: 10rem; font-size: 1rem;") }}
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

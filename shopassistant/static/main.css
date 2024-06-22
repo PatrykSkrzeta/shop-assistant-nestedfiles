@@ -1,0 +1,375 @@
+/* Konfiguracja */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+
+/* Formatowanie nawigacji */
+
+nav .logo{
+    font-size: 4rem;
+}
+
+nav .login{
+    font-size: 2rem;
+}
+
+/* Formatowanie naglowka */
+
+header{
+    display: flex;
+    height: 50vh;
+    width: 100vw;
+    margin-top: 10rem;
+
+}
+
+header h1{
+    font-size: 9rem;
+    color: bisque;
+    text-shadow: 1px 1px 1px black;
+}
+
+header p{
+    font-size: 6rem;
+    color: bisque;
+    text-shadow: 2px 1px 1px black;
+}
+
+header .intro{
+    width: 70vw;
+    float: left;
+    padding-left: 4rem;
+}
+
+header .btncontainer{
+    float: right;
+    width: 30vw;
+}
+
+.btncontainer button{
+    float: left;
+    padding: 2rem;
+    margin-top: 7rem;    
+    width: 20rem;
+    border-radius: 3rem;
+}
+
+.btncontainer button a{
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+/* Formatowanie sekcji */
+
+section{
+    height: 12vh;
+    width: 100vw;
+    background-color: rgb(56, 55, 55);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-image: url(images/310906.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+section ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10rem;
+
+}
+
+section ul li p{ 
+    font-size: 3rem;
+    color: bisque;
+    text-shadow: 1px 1px 1px black;
+}
+
+section ul li span{
+    font-size: 3rem;
+    padding-right: 1rem;
+    color: green;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px black;
+}
+
+section ul li{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Formatowanie stopki */
+
+footer{
+    clear: both;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+footer p {
+    font-size: 2rem;
+}
+
+/* -- Formatowanie logowania -- */
+
+
+
+.loginform{
+    background-image: url(images/310906.svg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 30vw;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-left: 1px solid black;
+}
+
+
+.loginform h2{
+    font-size: 5rem;
+    text-shadow: 2px 1px 1px black;
+    color: blanchedalmond;
+}
+
+.loginlabel{
+    font-size: 2rem;
+}
+
+.logininput{
+    height: 3rem;
+}
+
+.loginbox{
+    margin-top: 1rem;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+
+/* -- Formatowanie dodawania produktow -- */
+
+.productcontainer{
+    background-image: url(images/1710299.svg);
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.productcontainer h2{
+    font-size: 5rem;
+    margin-bottom: 5rem;
+}
+
+.productbox{
+    width: 40vw;
+}
+
+.productlabel{
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px black;
+    color: blanchedalmond;
+}
+
+.productinput{
+    height: 4rem;
+    font-size: 2rem;
+}
+
+
+/* -- Formatowanie dodawania zamowienia -- */
+
+.ordercontainer button{
+    padding: 1rem;
+    width: 10rem;
+    font-size: 2rem;
+}
+
+.ordercontainer h2{
+    font-size: 5rem;
+    margin-bottom: 5rem;
+}
+
+
+.ordercontainer{
+    background-image: url(images/310906.svg);
+    height: 90vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+
+.orderbox{
+    width: 40vw;
+}
+
+
+.ordercontainer {
+    position: relative;
+}
+#customModal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+}
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+/* -- Formatowanie magazynu -- */
+
+.magazinecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+    max-height: 300vh;
+
+    
+}
+
+.magazinecontainer table{
+    width: 60vw;
+    
+}
+
+.tablerow th{
+    font-size: 3rem;
+}
+
+.product-name{
+    font-size: 2rem;
+}
+
+.product-type{
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.magazinecontainer h2{
+    font-size: 7rem;
+    color: blanchedalmond;
+    text-shadow: 1px 1px 1px black;
+}
+
+.magazinecontainer p{
+    font-size: 5rem;
+    text-align: center;
+    color: blanchedalmond;
+    text-shadow: 1px 1px 1px black;
+}
+
+.magazinedescription{
+    padding: 5rem;
+    margin-bottom: 5rem;
+    background-image: url(images/1710299.svg);
+}
+
+.searchconatiner{
+    height: 10vh;
+
+}
+
+input#search{
+    width: 25rem;
+    background-color: rgb(141, 141, 141);
+    height: 4rem;
+}
+
+.searchform{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+
+.customersdescription{
+    padding: 5rem;
+    margin-bottom: 5rem;
+    background-image: url(images/310906.svg);
+    background-size: cover;
+}
+
+/* -- Formatowanie detali zamowienia -- */
+
+.details{
+    height: 70vh;
+    margin-top: 5rem;
+    width: 100vw;
+}
+
+.detailsHeading{
+    font-size: 5rem;
+}
+
+.logoutbutton:hover{
+    cursor: pointer;
+
+}
+
+
+.flash-messages {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    width: 20rem;
+}
+
+.alert {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    transition: opacity 0.15s linear;
+}
+
+.btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+}
+
+.alert:not(.show) {
+    opacity: 0;
+}

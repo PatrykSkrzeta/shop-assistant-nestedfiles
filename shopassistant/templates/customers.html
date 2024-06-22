@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="magazinecontainer">
+        <div class="customersdescription card bg-secondary">
+            <h2>Orders</h2>
+            <p>Currently you have {{ total_orders }} orders.</p>
+        </div>
+        <div class="searchconatiner">
+            <form class="form-inline mb-4 searchform" action="{{ url_for('customers') }}" method="GET">
+                <div class="form-group searchbox">
+                    <input type="text" class="form-control searchinput" id="search" name="search" placeholder="Search by last name or date (YYYY-MM-DD)">
+                </div>
+                <button type="submit" class="btn btn-primary searchbutton" style="padding: 0.7rem; font-size: 2rem;">Search</button>
+                <a href="{{ url_for('customers') }}" class="btn btn-secondary searchbutton" style="padding: 0.7rem; font-size: 2rem;">Clear</a>
+            </form>
+        </div>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr class="tablerow">
+                    <th scope="col">First Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td style="font-size: 1.7rem;">{{ order.first_name }}</td>
+                    <td style="font-size: 1.7rem;">{{ order.last_name }}</td>
+                    <td>
+                        <div style="font-size: 1.7rem;">{{ order.date_added }}</div>
+                    </td>
+                    <td style="font-size: 1.7rem;">{{ order.total_quantity }}</td>
+                    <td style="font-size: 1.7rem;">{{ order.total_order_price }} $</td>
+                    <td>
+                        <div style="display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center; align-content: center;">
+                            <a style="font-size: 1.7rem;" href="{{ url_for('order_details', order_id=order.id) }}" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    {% endblock %}
